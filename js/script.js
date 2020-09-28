@@ -32,6 +32,6 @@ function render(task) {
         "task": task
     };
 
-    template(data);
+    $(".task-container").append(template(data))
 
 }

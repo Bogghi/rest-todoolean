@@ -23,31 +23,14 @@
 
     <!-- main section that hold all the task that get retrived from the api -->
     <main class="wrapper">
-        <div class="contaier">
-            <!-- single task -->
-            <section class="task">
-                <div class="checkbox">
-                    <!-- incomplete -->
-                    <i class="far fa-check-circle"></i>
-                    <!-- completed -->
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <div class="task-title">
-                    BELLA LI
-                </div>
-                <div class="delbox">
-                    <!-- not hover -->
-                    <i class="far fa-trash-alt"></i>
-                    <!-- hover -->
-                    <i class="fas fa-trash-alt"></i>
-                </div>
-            </section>
+        <div class="contaier task-container">
+
         </div>
     </main>
 
     <script id="task-template" type="text">
         <!-- single task -->
-        {{#each data}}
+        {{#each task}}
         <section class="task">
             <div class="checkbox">
                 <!-- incomplete -->
