@@ -51,6 +51,10 @@ i {
     display: none;
 }
 
+.add-task i {
+    margin: 20px;
+}
+
 .checkbox [class*="fas"] {
     display: none;
 }

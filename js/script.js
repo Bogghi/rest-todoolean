@@ -10,6 +10,7 @@ $(document).ready(function(){
     
     taskHandler("lorem")
 
+    // change of icon
     $(".add-task").hover(function () {
             showHide($(this),true);
         }, function () {
@@ -17,7 +18,9 @@ $(document).ready(function(){
         }
     );
     
-    $(".task-container").mouseover(function () {
+    // 
+    $(document).mouseover(function () {
+        
         $(".task .checkbox").hover(function () {
                 // over
                 showHide($(this),true);
@@ -33,7 +36,22 @@ $(document).ready(function(){
                 showHide($(this),false);
             }
         );
+        
     });
+
+    $(".add-task i").click(function (e) { 
+        
+        var text = $("#task").val();
+        taskAdd(text);
+        
+    });
+
+    $(document).on("click",".task .delbox",function(){
+        
+        var id = $(this).attr("id");
+        taskDel(id);
+
+    })
 
 });
 
@@ -53,20 +71,48 @@ function taskHandler (params) {
         type: "GET",
         url: "http://157.230.17.132:3006/todos",
         success: function (data, status) {
-            console.log(data);
-            render(data);
+            for(var i = 0; i < data.length; i++){
+                render(data[i]);   
+            }
         },
         error: function (response) { console.log(response); }
     });
+
+}
+
+function taskAdd(taskText) {
+    
+    $.ajax({
+        type: "POST",
+        url: "http://157.230.17.132:3006/todos",
+        data: {
+            "text": taskText
+        },
+        success: function (response) {
+            console.log(response);
+            render(response);
+        },
+        error: function (response) { console.log(response); }
+    });
+
+}
+
+function taskDel(id){
+    $.ajax({
+        type: "DELETE",
+        url: "http://157.230.17.132:3006/todos/" + id,
+        success: function (response) {
+            remove(id);
+        }
+    });
+
 }
 
 function render(task) {
     var template = Handlebars.compile($("#task-template").html());    
-    
-    var data = {
-        "task": task
-    };
+    $(".task-container").append(template(task));
+}
 
-    $(".task-container").append(template(data))
-
+function remove(task) {
+    $("#"+task).parent().remove();
 }

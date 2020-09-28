@@ -29,31 +29,30 @@
                 <i class="far fa-plus-square"></i>
                 <!-- hover -->
                 <i class="fas fa-plus-square"></i>
+                <input type="text" name="task" id="task">
             </div>
         </div>
     </main>
 
     <script id="task-template" type="text">
         <!-- single task -->
-        {{#each task}}
         <section class="row task">
             <div class="checkbox">
                 <!-- incomplete -->
-                <i class="far fa-check-circle"></i>
+                <i class="far fa-check-circle" id="checkbox"></i>
                 <!-- completed -->
-                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-check-circle" id="checkbox"></i>
             </div>
             <div class="task-title">
-                {{this.text}}
+                {{text}}
             </div>
-            <div class="delbox">
+            <div class="delbox" id="{{id}}">
                 <!-- not hover -->
                 <i class="far fa-trash-alt"></i>
                 <!-- hover -->
                 <i class="fas fa-trash-alt"></i>
             </div>
         </section>
-        {{/each}}
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
