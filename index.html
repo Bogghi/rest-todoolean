@@ -9,6 +9,7 @@
     <title>todoolean</title>
 </head>
 <body>
+    <!-- navabar that will contain a basic introduction to the app -->
     <nav class="wrapper">
         <div class="contaier">
             <div class="navbar">
@@ -20,8 +21,10 @@
         </div>
     </nav>
 
+    <!-- main section that hold all the task that get retrived from the api -->
     <main class="wrapper">
         <div class="contaier">
+            <!-- single task -->
             <section class="task">
                 <div class="checkbox">
                     <!-- incomplete -->
@@ -43,6 +46,8 @@
     </main>
 
     <script id="task-template" type="text">
+        <!-- single task -->
+        {{#each data}}
         <section class="task">
             <div class="checkbox">
                 <!-- incomplete -->
@@ -51,7 +56,7 @@
                 <i class="fas fa-check-circle"></i>
             </div>
             <div class="task-title">
-                {{task-name}}
+                {{this.text}}
             </div>
             <div class="delbox">
                 <!-- not hover -->
@@ -60,6 +65,7 @@
                 <i class="fas fa-trash-alt"></i>
             </div>
         </section>
+        {{/each}}
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 

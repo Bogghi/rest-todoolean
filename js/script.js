@@ -8,7 +8,7 @@
 
 $(document).ready(function(){
     
-    taskHandler("lorem");
+    taskHandler("lorem")
 
 });
 
@@ -19,7 +19,19 @@ function taskHandler (params) {
         url: "http://157.230.17.132:3006/todos",
         success: function (data, status) {
             console.log(data);
+            render(data);
         },
         error: function (response) { console.log(response); }
     });
+}
+
+function render(task) {
+    var template = Handlebars.compile($("#task-template").html());    
+    
+    var data = {
+        "task": task
+    };
+
+    template(data);
+
 }
