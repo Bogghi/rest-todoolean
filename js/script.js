@@ -53,6 +53,15 @@ $(document).ready(function(){
 
     })
 
+    $(document).on("click",".task .checkbox",function(){
+        var obj = $(this).parent();
+        
+        obj.css("box-shadow","none");
+        obj.css("background-color","gray");
+        obj.find(".task-title").css("color","#262626");
+        obj.find("i").css("color","#262626");
+    })
+
 });
 
 function showHide(obj, dir) {
