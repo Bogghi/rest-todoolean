@@ -1,0 +1,34 @@
+/* general css rules */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.contaier {
+    width: 1000px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0px 30px;
+    background-color: blue;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-top: 20px;
+    padding: 0px 30px;
+    background-color: red;
+}

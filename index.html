@@ -5,10 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <title>todoolean</title>
 </head>
 <body>
-    
+    <nav class="wrapper">
+        <div class="contaier">
+            <div class="navbar">
+                <div class="Logo">todoolean</div>
+            <div class="account">
+                <i class="far fa-user-circle"></i>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="wrapper">
+        <div class="contaier">
+            <section class="task">
+                <div class="checkbox">
+                    <!-- incomplete -->
+                    <i class="far fa-check-circle"></i>
+                    <!-- completed -->
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="task-title">
+                    BELLA LI
+                </div>
+                <div class="delbox">
+                    <!-- not hover -->
+                    <i class="far fa-trash-alt"></i>
+                    <!-- hover -->
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script id="task-template" type="text">
+        <section class="task">
+            <div class="checkbox">
+                <!-- incomplete -->
+                <i class="far fa-check-circle"></i>
+                <!-- completed -->
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="task-title">
+                {{task-name}}
+            </div>
+            <div class="delbox">
+                <!-- not hover -->
+                <i class="far fa-trash-alt"></i>
+                <!-- hover -->
+                <i class="fas fa-trash-alt"></i>
+            </div>
+        </section>
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
