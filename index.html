@@ -24,14 +24,19 @@
     <!-- main section that hold all the task that get retrived from the api -->
     <main class="wrapper">
         <div class="contaier task-container">
-
+            <div class="row add-task">
+                <!-- not hover -->
+                <i class="far fa-plus-square"></i>
+                <!-- hover -->
+                <i class="fas fa-plus-square"></i>
+            </div>
         </div>
     </main>
 
     <script id="task-template" type="text">
         <!-- single task -->
         {{#each task}}
-        <section class="task">
+        <section class="row task">
             <div class="checkbox">
                 <!-- incomplete -->
                 <i class="far fa-check-circle"></i>

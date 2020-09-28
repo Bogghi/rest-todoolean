@@ -10,7 +10,42 @@ $(document).ready(function(){
     
     taskHandler("lorem")
 
+    $(".add-task").hover(function () {
+            showHide($(this),true);
+        }, function () {
+            showHide($(this),false);
+        }
+    );
+    
+    $(".task-container").mouseover(function () {
+        $(".task .checkbox").hover(function () {
+                // over
+                showHide($(this),true);
+            }, function () {
+                showHide($(this),false);
+            }
+        );
+
+        $(".task .delbox").hover(function () {
+                // over
+                showHide($(this),true);
+            }, function () {
+                showHide($(this),false);
+            }
+        );
+    });
+
 });
+
+function showHide(obj, dir) {
+    if(dir){
+        obj.find(".far").hide();
+        obj.find(".fas").show();
+    }else if(!dir) {
+        obj.find(".fas").hide();
+        obj.find(".far").show();
+    }
+}
 
 function taskHandler (params) {
     

@@ -23,9 +23,8 @@
     background-color: blue;
 }
 
-.task{
+.row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 60px;
     margin-top: 20px;
@@ -33,3 +32,29 @@
     background-color: red;
 }
 
+.task{
+    justify-content: space-between;
+}
+
+.add-task {
+    justify-content: center;
+}
+
+/* icon style */
+
+i {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.add-task [class*="fas"] {
+    display: none;
+}
+
+.checkbox [class*="fas"] {
+    display: none;
+}
+
+.delbox [class*="fas"] {
+    display: none;
+}
